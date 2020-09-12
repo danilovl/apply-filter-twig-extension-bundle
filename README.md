@@ -44,3 +44,5 @@ or
 {% endif %}
 {{ apply_filter(filterName, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.') }}
 ```
+
+More exampales in `tests`.
