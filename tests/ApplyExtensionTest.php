@@ -20,7 +20,7 @@ class ApplyExtensionTest extends KernelTestCase
     /**
      * @dataProvider filtersProvider
      */
-    public function testGetWeekDaysArray(
+    public function testFilters(
         string $template,
         string $result,
         array $templateParameter = []
