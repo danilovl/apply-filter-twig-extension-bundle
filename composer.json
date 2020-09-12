@@ -1,0 +1,19 @@
+{
+    "name": "danilovl/apply-filter-twig-extension-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony twig extension bundle provides dynamic call filters in template.",
+    "keywords": ["php","symfony","twig","bundle"],
+    "authors": [
+        {
+            "name": "Vladimir Danilov"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Danilovl\\ApplyFilterTwigExtensionBundle\\": "src/" }
+    },
+    "require": {
+        "php": "^7.4.0",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/twig-bundle": "^5.0"
+    }
+}

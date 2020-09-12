@@ -1,0 +1,7 @@
+services:
+  danilovl_apply_filter_twig_extension:
+    class: Danilovl\ApplyFilterTwigExtensionBundle\Twig\ApplyFilterExtension
+    autowire: true
+    public: false
+    tags:
+      - { name: twig.extension }
