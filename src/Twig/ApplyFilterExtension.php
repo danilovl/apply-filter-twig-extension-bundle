@@ -18,8 +18,8 @@ class ApplyFilterExtension extends AbstractExtension
     public function applyFilter(
         Environment $env,
         string $name,
-        $value,
-        $parameters = null,
+        mixed $value,
+        mixed $parameters = null,
         bool $skipChangeParameters = false
     ): string {
         $context = ['value' => $value];

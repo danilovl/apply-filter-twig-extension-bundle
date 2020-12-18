@@ -6,7 +6,7 @@ Symfony twig extension bundle provides dynamic call filters in template.
 
 ### Requirements 
 
-  * PHP 7.4.0 or higher
+  * PHP 8.0.0 or higher
   * Symfony 5.0 or higher
 
 ### 1. Installation
