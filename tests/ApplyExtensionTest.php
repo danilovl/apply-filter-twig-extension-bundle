@@ -2,9 +2,11 @@
 
 namespace Danilovl\ApplyFilterTwigExtensionBundle\Tests;
 
+use Danilovl\ApplyFilterTwigExtensionBundle\Twig\ApplyFilterExtension;
 use Generator;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 class ApplyExtensionTest extends KernelTestCase
 {
@@ -12,9 +14,11 @@ class ApplyExtensionTest extends KernelTestCase
 
     public function setUp(): void
     {
-        parent::setUp();
+        $this->twig = new Environment(new FilesystemLoader, [
+            'cache' => __DIR__ . '/../var/cache/twig-test',
+        ]);
 
-        $this->twig = self::bootKernel()->getContainer()->get('twig');
+        $this->twig->addExtension(new ApplyFilterExtension);
     }
 
     /**
@@ -41,13 +45,13 @@ class ApplyExtensionTest extends KernelTestCase
         yield ["{{ apply_filter('join', join) }}", '123', ['join' => [1, 2, 3]]];
         yield ["{{ apply_filter('join', join, '|') }}", '1|2|3', ['join' => [1, 2, 3]]];
         yield ["{{ apply_filter('join', join, [',', ' and ']) }}", '1,2 and 3', ['join' => [1, 2, 3]]];
-        yield ["{{ apply_filter('length ', length) }}", '3', ['length' => [1, 2, 3]]];
-        yield ["{{ apply_filter('lower ', 'WELCOME') }}", 'welcome'];
-        yield ["{{ apply_filter('replace ', 'I like this and --that--.', {'this': 'foo', '--that--': 'bar'}, true) }}", 'I like foo and bar.'];
-        yield ["{{ apply_filter('reverse ', '1234' ) }}", '4321'];
-        yield ["{{ apply_filter('round ', 42.55 ) }}", '43'];
-        yield ["{{ apply_filter('round ', 42.55, [1, 'floor']) }}", '42.5'];
-        yield ["{{ apply_filter('slice ', '12345', [1, 2]) }}", '23'];
+        yield ["{{ apply_filter('length', length) }}", '3', ['length' => [1, 2, 3]]];
+        yield ["{{ apply_filter('lower', 'WELCOME') }}", 'welcome'];
+        yield ["{{ apply_filter('replace', 'I like this and --that--.', {'this': 'foo', '--that--': 'bar'}, true) }}", 'I like foo and bar.'];
+        yield ["{{ apply_filter('reverse', '1234' ) }}", '4321'];
+        yield ["{{ apply_filter('round', 42.55 ) }}", '43'];
+        yield ["{{ apply_filter('round', 42.55, [1, 'floor']) }}", '42.5'];
+        yield ["{{ apply_filter('slice', '12345', [1, 2]) }}", '23'];
         yield ["{{ apply_filter('trim', '   I like Twig.') }}", 'I like Twig.'];
         yield ["{{ apply_filter('trim', '   I like Twig.', '.') }}", '   I like Twig'];
         yield ["{{ apply_filter('trim', '  I like Twig.  ', [' ', 'right']) }}", '  I like Twig.'];

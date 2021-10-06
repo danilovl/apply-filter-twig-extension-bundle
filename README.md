@@ -1,3 +1,5 @@
+[![phpunit](https://github.com/danilovl/apply-filter-twig-extension-bundle/actions/workflows/phpunit.yml/badge.svg)](https://github.com/danilovl/apply-filter-twig-extension-bundle/actions/workflows/phpunit.yml)
+
 # ApplyFilterTwigExtensionBundle #
 
 ## About ##

@@ -9,11 +9,22 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Danilovl\\ApplyFilterTwigExtensionBundle\\": "src/" }
+        "psr-4": {
+            "Danilovl\\ApplyFilterTwigExtensionBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Danilovl\\SelectAutocompleterBundle\\Tests\\": "tests/"
+        }
     },
     "require": {
         "php": "^8.0.0",
         "symfony/framework-bundle": "^5.0",
         "symfony/twig-bundle": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "symfony/phpunit-bridge": "^5.0"
     }
 }
