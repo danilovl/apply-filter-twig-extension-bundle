@@ -1,21 +1,21 @@
 <?php declare(strict_types=1);
 
-namespace Danilovl\ApplyFilterTwigExtensionBundle\Tests;
+namespace Danilovl\ApplyFilterTwigExtensionBundle\Tests\Twig;
 
 use Danilovl\ApplyFilterTwigExtensionBundle\Twig\ApplyFilterExtension;
 use Generator;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-class ApplyExtensionTest extends KernelTestCase
+class ApplyExtensionTest extends TestCase
 {
     private Environment $twig;
 
     public function setUp(): void
     {
         $this->twig = new Environment(new FilesystemLoader, [
-            'cache' => __DIR__ . '/../var/cache/twig-test',
+            'cache' => __DIR__ . '/../../var/cache/twig-test',
         ]);
 
         $this->twig->addExtension(new ApplyFilterExtension);
