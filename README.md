@@ -1,4 +1,7 @@
 [![phpunit](https://github.com/danilovl/apply-filter-twig-extension-bundle/actions/workflows/phpunit.yml/badge.svg)](https://github.com/danilovl/apply-filter-twig-extension-bundle/actions/workflows/phpunit.yml)
+[![downloads](https://img.shields.io/packagist/dt/danilovl/apply-filter-twig-extension-bundle)](https://packagist.org/packages/danilovl/apply-filter-twig-extension-bundle)
+[![latest Stable Version](https://img.shields.io/packagist/v/danilovl/apply-filter-twig-extension-bundle)](https://packagist.org/packages/danilovl/apply-filter-twig-extension-bundle)
+[![license](https://img.shields.io/packagist/l/danilovl/apply-filter-twig-extension-bundle)](https://packagist.org/packages/danilovl/apply-filter-twig-extension-bundle)
 
 # ApplyFilterTwigExtensionBundle #
 
@@ -48,3 +51,7 @@ or
 ```
 
 More exampales in `tests`.
+
+## License
+
+The ApplyFilterTwigExtensionBundle is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
