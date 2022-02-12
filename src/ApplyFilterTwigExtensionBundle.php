@@ -3,7 +3,6 @@
 namespace Danilovl\ApplyFilterTwigExtensionBundle;
 
 use Danilovl\ApplyFilterTwigExtensionBundle\DependencyInjection\ApplyFilterExtension;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ApplyFilterTwigExtensionBundle extends Bundle

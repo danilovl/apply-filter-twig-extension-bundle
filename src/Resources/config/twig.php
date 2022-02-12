@@ -6,9 +6,8 @@ use Danilovl\ApplyFilterTwigExtensionBundle\Twig\ApplyFilterExtension;
 
 return static function (ContainerConfigurator $container): void {
     $container->services()
-        ->set('danilovl_apply_filter_twig_extension', ApplyFilterExtension::class)
+        ->set(ApplyFilterExtension::class, ApplyFilterExtension::class)
         ->autowire()
         ->private()
-        ->tag('twig.extension')
-        ->alias(ApplyFilterExtension::class, 'danilovl_apply_filter_twig_extension');
+        ->tag('twig.extension');
 };

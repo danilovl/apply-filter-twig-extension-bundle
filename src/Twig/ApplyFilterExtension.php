@@ -2,9 +2,11 @@
 
 namespace Danilovl\ApplyFilterTwigExtensionBundle\Twig;
 
-use Twig\Environment;
+use Twig\{
+    Environment,
+    TwigFunction
+};
 use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
 
 class ApplyFilterExtension extends AbstractExtension
 {
