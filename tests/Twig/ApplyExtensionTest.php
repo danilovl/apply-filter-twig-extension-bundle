@@ -4,6 +4,7 @@ namespace Danilovl\ApplyFilterTwigExtensionBundle\Tests\Twig;
 
 use Danilovl\ApplyFilterTwigExtensionBundle\Twig\ApplyFilterExtension;
 use Generator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -21,9 +22,7 @@ class ApplyExtensionTest extends TestCase
         $this->twig->addExtension(new ApplyFilterExtension);
     }
 
-    /**
-     * @dataProvider filtersProvider
-     */
+    #[DataProvider('filtersProvider')]
     public function testFilters(
         string $template,
         string $result,
@@ -34,7 +33,7 @@ class ApplyExtensionTest extends TestCase
         $this->assertEquals($output, $result);
     }
 
-    public function filtersProvider(): Generator
+    public static function filtersProvider(): Generator
     {
         yield ["{{ apply_filter('title', 'my first car') }}", 'My First Car'];
         yield ["{{ apply_filter('abs', number) }}", '5', ['number' => -5]];
