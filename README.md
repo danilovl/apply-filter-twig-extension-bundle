@@ -19,7 +19,7 @@ Symfony twig extension bundle provides dynamic call filters in template.
 Install `danilovl/apply-filter-twig-extension-bundle` package by Composer:
  
 ``` bash
-$ composer require danilovl/apply-filter-twig-extension-bundle
+composer require danilovl/apply-filter-twig-extension-bundle
 ```
 Add the `ApplyFilterTwigExtensionBundle` to your application's bundles if does not add automatically:
 
