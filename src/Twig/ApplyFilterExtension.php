@@ -13,7 +13,7 @@ class ApplyFilterExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('apply_filter', [$this, 'applyFilter'], ['needs_environment' => true, 'is_safe' => ['html']])
+            new TwigFunction('apply_filter', $this->applyFilter(...), ['needs_environment' => true, 'is_safe' => ['html']])
         ];
     }
 

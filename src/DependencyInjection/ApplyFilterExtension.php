@@ -11,7 +11,7 @@ class ApplyFilterExtension extends Extension
 {
     private const string DIR_CONFIG = '/../Resources/config';
 
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . self::DIR_CONFIG));
         $loader->load('twig.yaml');
