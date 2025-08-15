@@ -22,7 +22,7 @@ class ApplyExtensionTest extends TestCase
         $this->twig->addExtension(new ApplyFilterExtension);
     }
 
-    #[DataProvider('filtersProvider')]
+    #[DataProvider('provideFiltersCases')]
     public function testFilters(
         string $template,
         string $result,
@@ -33,7 +33,7 @@ class ApplyExtensionTest extends TestCase
         $this->assertEquals($output, $result);
     }
 
-    public static function filtersProvider(): Generator
+    public static function provideFiltersCases(): Generator
     {
         yield ["{{ apply_filter('title', 'my first car') }}", 'My First Car'];
         yield ["{{ apply_filter('abs', number) }}", '5', ['number' => -5]];
